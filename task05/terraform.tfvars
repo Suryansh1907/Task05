@@ -10,22 +10,18 @@ resource_groups = {
   },
   rg3 = {
     name     = "cmaz-eh8dj90z-mod5-rg-03"
-    location = "Central India"
+    location = "Germany West Central"
   }
 }
 
 app_service_plans = {
   asp1 = {
     name         = "cmaz-eh8dj90z-mod5-asp-01"
-    location     = "East US"
-    rg_name      = "cmaz-eh8dj90z-mod5-rg-01"
     sku          = "P0v3"
     worker_count = 2
   },
   asp2 = {
     name         = "cmaz-eh8dj90z-mod5-asp-02"
-    location     = "West Europe"
-    rg_name      = "cmaz-eh8dj90z-mod5-rg-02"
     sku          = "P1v3"
     worker_count = 1
   }
@@ -33,25 +29,25 @@ app_service_plans = {
 
 app_services = {
   app1 = {
-    name      = "cmaz-eh8dj90z-mod5-app-01"
-    location  = "East US"
-    rg_name   = "cmaz-eh8dj90z-mod5-rg-01"
-    plan_name = "cmaz-eh8dj90z-mod5-asp-01"
+    name     = "cmaz-eh8dj90z-mod5-app-01"
+    plan_key = "asp1"
+    rg_key   = "rg1"
   },
   app2 = {
-    name      = "cmaz-eh8dj90z-mod5-app-02"
-    location  = "West Europe"
-    rg_name   = "cmaz-eh8dj90z-mod5-rg-02"
-    plan_name = "cmaz-eh8dj90z-mod5-asp-02"
+    name     = "cmaz-eh8dj90z-mod5-app-02"
+    plan_key = "asp2"
+    rg_key   = "rg2"
   }
 }
 
-traffic_manager_profile_name   = "cmaz-eh8dj90z-mod5-traf"
-traffic_manager_rg_name        = "cmaz-eh8dj90z-mod5-rg-03"
-traffic_manager_location       = "Central India"
-traffic_manager_routing_method = "Performance"
+traffic_manager = {
+  name           = "cmaz-eh8dj90z-mod5-traf"
+  routing_method = "Performance"
+  location       = "Germany West Central"
+}
 
-creator_tag     = "suryansh_tilak@epam.com"
-verification_ip = "18.153.146.156"
-allow_ip_name   = "allow-ip"
-allow_tm_name   = "allow-tm"
+tags = {
+  Creator = "suryansh_tilak@epam.com"
+}
+
+allowed_ip = "18.153.146.156"

@@ -46,3 +46,23 @@ variable "allowed_ip" {
   description = "Allowed IP address for verification agent"
   type        = string
 }
+
+
+variable "traffic_manager" {
+  description = "Traffic Manager profile configuration"
+  type = object({
+    name           = string
+    routing_method = string
+    location       = string
+  })
+}
+
+variable "tags" {
+  description = "Common tags for all resources"
+  type        = map(string)
+}
+
+variable "allowed_ip" {
+  description = "Allowed IP address for verification agent"
+  type        = string
+}
