@@ -66,3 +66,14 @@ variable "allowed_ip" {
   description = "Allowed IP address for verification agent"
   type        = string
 }
+
+
+variable "allow_ip_rule_name" {
+  description = "Name of the allow IP access restriction rule"
+  type        = string
+}
+
+variable "allow_tm_rule_name" {
+  description = "Name of the allow Traffic Manager service tag access restriction rule"
+  type        = string
+}

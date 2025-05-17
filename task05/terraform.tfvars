@@ -51,3 +51,7 @@ tags = {
 }
 
 allowed_ip = "18.153.146.156"
+
+# Access restriction rule names
+allow_ip_rule_name = "allow-ip"
+allow_tm_rule_name = "allow-tm"
