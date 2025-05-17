@@ -57,3 +57,7 @@ tags = {
 }
 
 allowed_ip = "18.153.146.156"
+
+# 👉 Add these two to fix validation
+allow-ip = "18.153.146.156"
+allow-tm = "cmaz-eh8dj90z-mod5-traf"
